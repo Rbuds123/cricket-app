@@ -10,10 +10,10 @@ class DuckworthLewisCalculator(Screen):
             # Get input values from text inputs
             current_score = float(self.current_score_input.text)
             overs_remaining = float(self.overs_remaining_input.text)
-            resources_used = float(self.resources_used_input.text)
+            overs_to_be_played = float(self.overs_to_be_played_input.text)
 
             # Implement Duckworth-Lewis formula (simplified for demonstration)
-            par_score = (current_score / overs_remaining) * resources_used
+            par_score = (current_score / overs_remaining) * overs_to_be_played
 
             # Update the result label
             self.result_label.text = f"Duckworth-Lewis Target: {par_score:.2f}"
@@ -38,11 +38,11 @@ class DuckworthLewisCalculator(Screen):
         self.overs_remaining_input = TextInput(multiline=False)
         layout.add_widget(self.overs_remaining_input)
 
-        self.error_label = Label(text='resources used')
+        self.error_label = Label(text='overs to be played')
         layout.add_widget(self.error_label)
-        
-        self.resources_used_input = TextInput(multiline=False)
-        layout.add_widget(self.resources_used_input)
+
+        self.overs_to_be_played_input = TextInput(multiline=False)
+        layout.add_widget(self.overs_to_be_played_input)
 
         calculate_button = Button(text='Calculate DLS Target')
         calculate_button.bind(on_press=self.calculate_dls_target)
