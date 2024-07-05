@@ -1,2 +1,2 @@
 # cricket-app
-calculating run rate and dls method 
+``calculating run rate and dls method``
