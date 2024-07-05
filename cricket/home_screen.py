@@ -18,6 +18,10 @@ class HomeScreen(Screen):
         btn2 = Button(text="Duckworth-Lewis-Stern Calculator", font_size='20sp')
         btn2.bind(on_press=self.go_to_dls_calculator)
         layout.add_widget(btn2)
+
+        btn3 = Button(text="net run rate calculator", font_size='20sp')
+        btn3.bind(on_press=self.go_to_net_run_rate_calculator)
+        layout.add_widget(btn3)
         
         self.add_widget(layout)
 
@@ -26,3 +30,6 @@ class HomeScreen(Screen):
 
     def go_to_dls_calculator(self, instance):
         self.manager.current = 'dlscalc'
+    
+    def go_to_net_run_rate_calculator(self, instance):
+        self.manager.current = 'netrunrate'
